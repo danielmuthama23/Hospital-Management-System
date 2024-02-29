@@ -1,0 +1,35 @@
+<!-- views.xml -->
+
+<odoo>
+    <data>
+        <record id="view_hospital_patient_form" model="ir.ui.view">
+            <field name="name">hospital.patient.form</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="gender"/>
+                            <field name="dob"/>
+                            <field name="blood_group"/>
+                            <field name="address"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="medical_records" widget="one2many_list">
+                                <tree>
+                                    <field name="date"/>
+                                    <field name="doctor_id"/>
+                                    <field name="diagnosis"/>
+                                    <field name="prescription"/>
+                                    <field name="treatment"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Add similar records for other views (doctor, appointment, medical record, billing) -->
+    </data>
+</odoo>
